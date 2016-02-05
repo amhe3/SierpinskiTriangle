@@ -8,17 +8,24 @@ public void draw()
 	sierpinski(0, 400, 400);
 }
 int sizes = 20;
-public void mouseWheel(MouseEvent event)//optional
+public void mousePressed()//optional
 {
-	sizes = event;
+	if(sizes == 5)
+	{
+		sizes = 100;
+	}
+	else
+		sizes =+ 5;
 }
 public void sierpinski(int x, int y, int len) 
 {
-	len = sizes;
-	if(len >= 5)
+	int r = (int) (Math.random()*225);
+	int g = (int) (Math.random()*225);
+	int b = (int) (Math.random()*225);
+	if(len >= sizes)
 	{
 		//fill(255, 255, 255);
-		fill(214, 214, 214);
+		fill(r, g, b);
 		sierpinski(x, y, len/2);
 		sierpinski(x+(len/2), y, len/2);
 		sierpinski(x+(len/4), y-(len/2), len/2);
