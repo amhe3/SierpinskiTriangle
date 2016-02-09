@@ -10,12 +10,13 @@ public void draw()
 int sizes = 20;
 public void mousePressed()//optional
 {
-	if(sizes == 5)
+	if(sizes <= 5)
 	{
-		sizes = 100;
+		sizes = 400;
 	}
 	else
-		sizes =+ 5;
+		sizes =+ sizes/2;
+	background(0, 0, 0);
 }
 public void sierpinski(int x, int y, int len) 
 {
@@ -25,6 +26,7 @@ public void sierpinski(int x, int y, int len)
 	if(len >= sizes)
 	{
 		//fill(255, 255, 255);
+
 		fill(r, g, b);
 		sierpinski(x, y, len/2);
 		sierpinski(x+(len/2), y, len/2);
